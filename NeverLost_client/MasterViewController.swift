@@ -11,36 +11,36 @@ import CoreData
 import GoogleMaps
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-
+    
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
-
-
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-            longitude: 151.20, zoom: 6)
+        
+        let camera = GMSCameraPosition.cameraWithLatitude(48.8534100,
+            longitude: 2.3488000, zoom: 15)
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
         self.view = mapView
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
+        marker.title = "Paris"
+        marker.snippet = "France"
         marker.map = mapView
-            
-        }
+        
     }
+}
 
-    /*
-     // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
-     
-     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-         // In the simplest, most efficient, case, reload the table view.
-         self.tableView.reloadData()
-     }
-     */
+/*
+// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
 
+func controllerDidChangeContent(controller: NSFetchedResultsController) {
+// In the simplest, most efficient, case, reload the table view.
+self.tableView.reloadData()
+}
+*/
 
