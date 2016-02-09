@@ -27,7 +27,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.view = mapView
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
+        marker.position = CLLocationCoordinate2DMake(48.8534100, 2.3488000)
         marker.title = "Paris"
         marker.snippet = "France"
         marker.map = mapView
